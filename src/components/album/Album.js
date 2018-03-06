@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-// import Image from '../image/Image';
+import Images from '../images/Images';
 import { connect } from 'react-redux';
 import { addAlbum, loadAlbum } from './actions';
+
 
 class Album extends Component {
   
@@ -10,14 +11,11 @@ class Album extends Component {
   }
 
   render() {
-    const { addAlbum, images } = this.props;
+    const { addAlbum, name } = this.props;
     return (
       <div>
-        <ul className="images">
-          {images.map(image => {
-            return <Image key={image.id} {...image}/>;
-          })}
-        </ul>
+        <h1>{name}</h1>
+        <Images/>
       </div>
     );
   }
