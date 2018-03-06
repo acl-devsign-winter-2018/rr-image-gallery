@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addImage, loadAlbum } from './actions';
+import { addImage, loadImages } from './actions';
 import Image from './Image';
 
 class Images extends Component {
@@ -9,7 +9,7 @@ class Images extends Component {
   }
 
   handleLoading() {
-    this.props.loadAlbum();
+    this.props.loadImages();
   }
   
   render() {
@@ -26,4 +26,4 @@ class Images extends Component {
 
 export default connect (
   state => ({ images: state.images }),
-  { addImage })(loadAlbum);
+  { addImage })(loadImages);

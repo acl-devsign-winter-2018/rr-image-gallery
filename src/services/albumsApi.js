@@ -18,10 +18,14 @@ function load() {
   return doFetch(`${URL}/albums/${id}`);
 }
 
-function add(album) {
-  return doFetch(URL, {
+function getAll() {
+  return doFetch(`${URL}/albums`);
+}
+
+function add(image) {
+  return doFetch(`${URL}/images`, {
     method: 'POST',
-    body: JSON.stringify(album),
+    body: JSON.stringify(image),
     headers: {
       'content-type': 'application/json'
     }
@@ -34,26 +38,9 @@ function remove(id) {
   });
 }
 
-function addImage(album) {
-  return doFetch(`${URL}/images/`, {
-    method: 'POST',
-    body: JSON.stringify(album),
-    headers: {
-      'content-type': 'application/json'
-    }
-  });
-}
-
-function removeImage(id) {
-  return doFetch(`${URL}/images/${id}`, {
-    method: 'DELETE'
-  });
-}
-
 export default {
   load,
+  getAll,
   add,
-  remove,
-  addImage,
-  removeImage
+  remove
 };
