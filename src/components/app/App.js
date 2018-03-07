@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import AlbumDetail from '../album/AlbumDetail';
 import { SyncLoader } from 'react-spinners';
 import Error from './Error';
+import Albums from '../album/Albums';
 
 
 class App extends Component {
@@ -24,7 +25,8 @@ class App extends Component {
           </header>
           <main id="main" role="main">
             <Switch>
-              <Route exact path="/" component={AlbumDetail}/>
+              <Route exact path="/" component={Albums}/>
+              <Route path="/albums/:id" component={AlbumDetail}/>
               <Redirect to="/"/>
             </Switch>
           </main>

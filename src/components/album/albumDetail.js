@@ -6,11 +6,8 @@ import Images from '../image/Images';
 class AlbumDetail extends Component {
   
   componentDidMount() {
-    this.handleLoad();
-  }
-
-  handleLoad() {
-    this.props.loadAlbum();
+    const { albumId, loadAlbum } = this.props;
+    loadAlbum(albumId);
   }
 
   render() {
@@ -27,6 +24,9 @@ class AlbumDetail extends Component {
 }
 
 export default connect(
-  state => ({ album: state.album }),
+  (state, props) => ({ 
+    album: state.album,
+    albumId: props.match.params.id //brings in the album id from url
+  }),
   { loadAlbum }
 )(AlbumDetail);

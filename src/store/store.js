@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import promiseMiddleware from './promiseMiddleware';
 import { images } from '../components/image/reducers';
-import { album } from '../components/album/reducers';
+import { album, albums } from '../components/album/reducers';
 
 import { loading, error } from '../components/app/reducers';
 
@@ -10,7 +10,8 @@ const reducer = combineReducers({
   images,
   loading,
   error,
-  album
+  album,
+  albums
 });
 
 

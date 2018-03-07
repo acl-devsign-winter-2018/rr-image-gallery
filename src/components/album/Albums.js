@@ -1,31 +1,26 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { loadAlbums } from './actions';
-import Images from '../image/Images';
 import Album from './Album';
 
 class Albums extends Component {
   
   componentDidMount() {
-    this.handleLoad();
-  }
-
-  handleLoad() {
-    this.props.loadAlbum();
+    this.props.loadAlbums();
   }
 
   render() {
     const { albums } = this.props;
     
     return (
-      <Fragment>
-        {albums.map()}
-      </Fragment>
+      <ul>
+        {albums.map(album => <Album key={album.id} {...album}/>)}
+      </ul>
     );
   }
 }
 
 export default connect(
-  state => ({ album: state.albums }),
+  state => ({ albums: state.albums }),
   { loadAlbums }
 )(Albums);
