@@ -36,16 +36,16 @@ export default class ImageForm extends Component {
     const { url, description, title } = this.state;
 
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <fieldset>
           Title: 
-          <input name="title" value={title} onChange={this.handChange} placeholder="Enter title"/>
+          <input name="title" value={title} onChange={this.handleChange} placeholder="Enter title"/>
 
           Url:
-          <input name="url" value={url} onChange={this.handChange} placeholder="Enter url"/>
+          <input name="url" value={url} onChange={this.handleChange} placeholder="Enter url"/>
          
           Description:
-          <input name="description" value={description} onChange={this.handChange} placeholder="Enter description"/>
+          <input name="description" value={description} onChange={this.handleChange} placeholder="Enter description"/>
 
         </fieldset>
         <button type="submit">Add</button>
