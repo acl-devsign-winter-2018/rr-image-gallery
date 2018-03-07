@@ -6,14 +6,6 @@ import ImageForm from './ImageForm';
 import './images.css';
 
 class Images extends Component {
-  
-  componentDidMount() {
-    this.handleLoad();
-  }
-
-  handleLoad() {
-    this.props.loadImages();
-  }
 
   render() {
     const { images, addImage } = this.props;
