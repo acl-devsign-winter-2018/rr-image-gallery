@@ -9,13 +9,14 @@ import { removeImage } from './actions';
 
 class Image extends Component {
   render() {
-    const { id, description, url, removeImage, title } = this.props;
+    const { id, description, url, removeImage, title, album } = this.props;
 
     return (
       <li>
         <figure>
           <img src={url} alt={title}/>
           <figcaption>{description}</figcaption>
+          <p>{album}</p>
           <button onClick={()=> removeImage(id)}>REMOVE</button>
         </figure>
       </li>

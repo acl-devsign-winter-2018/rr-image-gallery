@@ -23,7 +23,8 @@ export default class ImageForm extends Component {
         this.setState({
           url: '',
           description: '',
-          title: ''
+          title: '',
+          album: '5a9f614c56745c0021e1b928'
         });
       });
   };
