@@ -15,7 +15,7 @@ export default class App extends Component {
         
         <main id="main" role="main">
           <Switch>
-            {/* <Route exact path="/" component={Images}/> */}
+            <Route exact path="/" component={Images}/>
             <Redirect to="/"/>
           </Switch>
         </main>
@@ -26,4 +26,6 @@ export default class App extends Component {
     );
   }
 }
+
+
 
