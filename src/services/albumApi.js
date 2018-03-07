@@ -12,6 +12,10 @@ const doFetch = (url, options = {}) => {
     });
 };
 
+function loadAlbums() {
+  return doFetch(`${URL}/albums`);
+}
+
 function load() {
   return doFetch(`${URL}/albums/${albumId}`);
 }
@@ -43,6 +47,7 @@ function remove(id) {
 }
 
 export default {
+  loadAlbums,
   load,
   add,
   remove
