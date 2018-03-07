@@ -37,5 +37,4 @@ describe('error reducers', () => {
     const state = error({}, { type: LOAD_START });
     expect(state).toBeNull();
   });
-
 });

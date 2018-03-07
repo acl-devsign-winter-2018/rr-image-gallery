@@ -3,7 +3,6 @@ import Images from '../images/Images';
 import { connect } from 'react-redux';
 import { loadAlbum } from './actions';
 
-
 class Album extends Component {
   
   componentDidMount() {

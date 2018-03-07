@@ -18,7 +18,6 @@ class Image extends Component {
         </figure>
       </li>
     );
-
   }
 }
 

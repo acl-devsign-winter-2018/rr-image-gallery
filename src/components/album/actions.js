@@ -1,19 +1,14 @@
 import { ALBUM_LOAD } from './reducers';
 import albumsApi from '../../services/albumsApi';
 
-// export const doLoadAlbum = api => () => {
-//   return {
-//     type: ALBUM_LOAD,
-//     payload: api.load()
-//   };
-// };
-
 export function loadAlbum() {
   return {
     type: ALBUM_LOAD,
     payload: albumsApi.load()
   };
 }
+
+
 
 // export function addAlbum(album) {
 //   return {

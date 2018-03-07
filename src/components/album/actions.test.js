@@ -1,5 +1,5 @@
 import { doLoadAlbum, addAlbum } from './actions';
-import { ALBUM_ADD, ALBUM_LOAD, ALBUM_REMOVE } from './reducers';
+import { ALBUM_ADD, ALBUM_LOAD } from './reducers';
 
 it.skip('loads album', () => {
   const { type, payload } = doLoadAlbum({

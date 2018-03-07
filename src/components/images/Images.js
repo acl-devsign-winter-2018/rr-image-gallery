@@ -5,7 +5,6 @@ import ImageForm from './ImageForm';
 import Image from './Image';
 import './images.css';
 
-
 class Images extends Component {
   componentDidMount() {
     this.handleLoading();

@@ -25,11 +25,11 @@ export default class ImageForm extends Component {
           description: ''
         });
       });
-  }
+  };
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value })
-  }
+  };
 
   render() {
     const { title, url, description } = this.state;
@@ -57,6 +57,5 @@ export default class ImageForm extends Component {
       </form>
 
     );
-
   }
 }
