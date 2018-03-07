@@ -1,7 +1,34 @@
 export const IMAGE_ADD = 'IMAGE_ADD';
 export const IMAGE_REMOVE = 'IMAGE_REMOVE';
 export const IMAGE_LOAD = 'IMAGE_LOAD';
+export const FILTER_APPLY = 'FILTER_APPLY';
 import { ALBUM_LOAD } from '../album/reducers';
+import { createSelector } from 'reselect';
+
+const filterSelector = state => state.filter;
+const imagesSelector = state => state.images;
+
+export const filteredImagesSelector = createSelector(
+  [filterSelector, imagesSelector],
+  (filter, images) => {
+    if(!filter) return images;
+    return images.filter(image => {
+      (image.description.includes(filter) || image.title.includes(filter)) ? true : false;
+    }
+    );
+  }
+);
+
+export function filter(state = '', { type, payload }) {
+  switch(type) {
+    case FILTER_APPLY:
+      return payload;
+    case ALBUM_LOAD:
+      return '';
+    default:
+      return state;
+  }
+}
 
 export function images(state = [], { type, payload }) {
   switch(type) {
