@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 export default class ImageForm extends Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   state = {
     title: '',
     url: '',

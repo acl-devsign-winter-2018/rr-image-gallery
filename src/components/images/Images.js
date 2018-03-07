@@ -19,8 +19,8 @@ class Images extends Component {
     
     return (
       <div className="images-container">
-        <ImageForm onComple={addImage}/>
-        <ul lcassName="images">
+        <ImageForm onComplete={addImage}/>
+        <ul className="images">
           {images.map(image => <Image key={image.id} {...image}/>)}
         </ul>
       </div>

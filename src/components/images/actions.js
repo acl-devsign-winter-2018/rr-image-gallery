@@ -14,7 +14,7 @@ export function addImage(image) {
   image.album = album;
   return {
     type: IMAGE_ADD,
-    payload: albumsApi.addImage(image)
+    payload: albumsApi.add(image)
   };
 }
 
