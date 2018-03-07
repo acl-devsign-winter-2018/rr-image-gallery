@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './Album.css';
+import './Image.css';
 import { removeImage } from './actions';
 // import AlbumForm from './AlbumForm';
 
-class Album extends Component {
+class Image extends Component {
 
   render() {
     const { id, description, url, title, removeImage } = this.props;
 
     return (
-      <li className="album-li">
+      <li className="image-li">
         <div>
           <div className="img-contain">
             <img src={url} alt={title}/>
@@ -27,4 +27,4 @@ class Album extends Component {
 export default connect(
   null,
   { removeImage }
-)(Album);
+)(Image);

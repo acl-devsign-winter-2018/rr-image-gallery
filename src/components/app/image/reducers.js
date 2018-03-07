@@ -3,7 +3,7 @@ export const IMAGE_ADD = 'IMAGE_ADD';
 export const IMAGE_REMOVE = 'IMAGE_REMOVE';
 export const ALBUM_LOAD = 'ALBUM_LOAD';
 
-export function albums(state = [], { type, payload }) {
+export function images(state = [], { type, payload }) {
   switch(type) {
 
     case ALBUM_LOAD:

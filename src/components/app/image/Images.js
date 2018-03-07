@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './Album.css';
+import './Image.css';
 import { connect } from 'react-redux';
 import { loadAlbum, addImage } from './actions';
 import ImageForm from './ImageForm';
-import Album from './Album';
+import Image from './Image';
 
 
-class Albums extends Component {
+class Images extends Component {
 
 
   componentDidMount() {
@@ -18,14 +18,14 @@ class Albums extends Component {
   };
 
   render() { 
-    const { albums, addImage } = this.props;
+    const { images, addImage } = this.props;
     return (
       <section className="main-container maxwidth-wrap">
         <div className="add-contain">
           <ImageForm onEdit={addImage}/>
         </div>
-        <ul className="album-ul">
-          {albums.map(album => <Album key={album.id} {...album}/>)}
+        <ul className="image-ul">
+          {images.map(album => <Image key={album.id} {...album}/>)}
         </ul>
 
       </section>
@@ -34,6 +34,6 @@ class Albums extends Component {
 }
 
 export default connect(
-  state => ({ albums: state.albums }),
+  state => ({ images: state.images }),
   { loadAlbum, addImage }
-)(Albums);
+)(Images);

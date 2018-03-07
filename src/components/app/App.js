@@ -4,7 +4,7 @@ import './App.css';
 // import { connect } from 'react-redux';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import Albums from './albums/Albums';
+import Images from './image/Images';
 import Loading from './Loading';
 
 
@@ -20,7 +20,7 @@ export default class App extends Component {
             <main role="main" id="main">
               <Loading/>
               <Switch>
-                <Route exact path="/" component={Albums}/>
+                <Route exact path="/" component={Images}/>
                 {/* <Route path="/about" component={About}/> */}
                 {/* <Route path="/movies/:id" render={({ match }) => <MovieDetail imdbID={match.params.id}/>}/> */}
                 <Redirect to="/"/>
