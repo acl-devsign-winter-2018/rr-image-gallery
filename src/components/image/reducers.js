@@ -13,7 +13,7 @@ export const filteredImagesSelector = createSelector(
   (filter, images) => {
     if(!filter) return images;
     return images.filter(image => {
-      (image.description.includes(filter) || image.title.includes(filter)) ? true : false;
+      return (image.description.includes(filter) || image.title.includes(filter));
     }
     );
   }
