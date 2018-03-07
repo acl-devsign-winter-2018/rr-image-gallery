@@ -1,4 +1,4 @@
-import { ALBUM_LOAD } from './reducers';
+import { ALBUM_LOAD, ALBUMS_LOAD } from './reducers';
 import albumsApi from '../../services/albumsApi';
 
 export function loadAlbum() {
@@ -8,18 +8,9 @@ export function loadAlbum() {
   };
 }
 
-
-
-// export function addAlbum(album) {
-//   return {
-//     type: ALBUM_ADD,
-//     payload: albumsApi.add(album)
-//   };
-// }
-
-// export function removeAlbum(id) {
-//   return {
-//     type: ALBUM_REMOVE,
-//     payload: albumsApi.remove(id).then(() => id)
-//   };
-// }
+export function loadAlbums() {
+  return {
+    type: ALBUMS_LOAD,
+    payload: albumsApi.loadAlbums()
+  };
+}

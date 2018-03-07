@@ -18,7 +18,7 @@ function load() {
   return doFetch(`${URL}/albums/${id}`);
 }
 
-function getAll() {
+function loadAlbums() {
   return doFetch(`${URL}/albums`);
 }
 
@@ -40,7 +40,7 @@ function remove(id) {
 
 export default {
   load,
-  getAll,
+  loadAlbums,
   add,
   remove
 };
