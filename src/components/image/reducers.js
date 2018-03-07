@@ -13,7 +13,7 @@ export const filteredImagesSelector = createSelector(
   (filter, images) => {
     if(!filter) return images;
     return images.filter(image => {
-      return (image.description.includes(filter) || image.title.includes(filter));
+      return (image.description.toLowerCase().includes(filter.toLowerCase()) || image.title.toLowerCase().includes(filter.toLowerCase()));
     }
     );
   }

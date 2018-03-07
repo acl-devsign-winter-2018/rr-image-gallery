@@ -15,7 +15,7 @@ class Filter extends Component {
     return (
       <form className="filter-form">
         <label> Filter:
-        <input value={filter} onChange={this.handleFilter} placeholder="case sensitive"/>
+        <input value={filter} onChange={this.handleFilter} placeholder="case insensitive"/>
         </label>
       </form>
     );
