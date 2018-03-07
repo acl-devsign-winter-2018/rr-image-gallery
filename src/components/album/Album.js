@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './album.css';
 
 export default class Albums extends Component {
   
@@ -8,7 +9,7 @@ export default class Albums extends Component {
 
     return (
       <li className="album-item">
-        <Link to={`/albums/${id}`}>{name}</Link>
+        <Link to={`/albums/${id}`}><span className="fa fa-caret-right"></span> {name}</Link>
       </li>
     );
   }

@@ -9,13 +9,27 @@ import { filteredImagesSelector } from './reducers';
 
 class Images extends Component {
 
+  state = {
+    visible: false
+  };
+
+  toggleForm = () => {
+    this.setState(prev => ({
+      visible: !prev.visible
+    }));
+  };
+
   render() {
     const { images, addImage } = this.props;
+    const { visible } = this.state;
     
     return (
       <div className="images-box">
         <Filter/>
-        <ImageForm onComplete={addImage}/>
+        <button className="toggle-form-button" onClick={this.toggleForm}>{
+          visible ? 'Hide Form' : 'Add an Image' 
+        }</button>
+        { visible && <ImageForm onComplete={addImage}/> }
         <ul className="images">
           {images.map(image => <Image key={image.id} {...image}/>)}
         </ul>

@@ -1,6 +1,10 @@
+@import '../../styles/variables.css';
 
 .image-form {
   text-align: center;
+  padding: .5rem;
+  background: $light-grey;
+  border-radius: .5rem;
   fieldset {
     display: flex;
     flex-direction: column;
@@ -21,6 +25,7 @@
     }
   }
   button {
+    background: white;
     font-weight: 600;
     width: 100%;
     padding: .4rem;

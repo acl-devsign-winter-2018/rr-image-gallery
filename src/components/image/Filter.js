@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { applyFilter } from './actions';
+import './filter.css';
 
 class Filter extends Component {
 
@@ -14,7 +15,7 @@ class Filter extends Component {
     return (
       <form className="filter-form">
         <label> Filter:
-        <input value={filter} onChange={this.handleFilter}/>
+        <input value={filter} onChange={this.handleFilter} placeholder="case sensitive"/>
         </label>
       </form>
     );
