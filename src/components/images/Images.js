@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addImage, loadImages } from './actions';
 import ImageForm from './ImageForm';
 import Image from './Image';
+import './images.css';
 
 
 class Images extends Component {

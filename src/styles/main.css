@@ -1,0 +1,22 @@
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  height: 100%;
+  background: $teal;
+};
+
+img {
+  max-width: 25%;
+  height: auto;
+  display: block;
+}
+
+.clip {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); 
+  clip: rect(1px, 1px, 1px, 1px);
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeImage } from './actions';
+import './images.css';
 
 class Image extends Component {
 
@@ -8,12 +9,12 @@ class Image extends Component {
     const { id, title, description, removeImage, url } = this.props;
 
     return (
-      <li>
+      <li className="image">
         <h3>{title}</h3>
         <figure>
           <img src={url} alt={title}/>
           <figcaption>{description}</figcaption>
-          <button onClick={() => removeImage(id)}>X</button>
+          <button onClick={() => removeImage(id)}>Remove</button>
         </figure>
       </li>
     );

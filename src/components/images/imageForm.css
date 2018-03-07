@@ -1,0 +1,18 @@
+@import '../../styles/variables.css';
+
+.imageForm {
+  text-align: center;
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    label {
+      display: block;
+      margin: auto;
+      width: 100%;
+    }
+  }
+}
+button {
+  background: $green;
+  color: $grey
+}

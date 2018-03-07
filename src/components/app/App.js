@@ -6,15 +6,17 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="main-body">
-        <header id="main-header">
-          <h1>Image Gallery</h1>
-        </header>
-        <main id="main-content">
-          <Album/>
-        </main>
-        <footer id="main-footer">
-        </footer>
+      <div id="container">
+        <div className="main-body">
+          <header id="main-header">
+            <h1>Image Gallery</h1>
+          </header>
+          <main id="main-content">
+            <Album/>
+          </main>
+          <footer id="main-footer">
+          </footer>
+        </div>
       </div>
     );
   }

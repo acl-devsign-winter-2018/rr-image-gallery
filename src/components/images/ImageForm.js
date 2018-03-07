@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './imageForm.css';
 
 export default class ImageForm extends Component {
 
