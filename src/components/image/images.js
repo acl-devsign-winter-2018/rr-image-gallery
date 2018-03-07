@@ -39,5 +39,5 @@ class Images extends Component {
 
 export default connect(
   state => ({ images: state.images }),
-  { addImage, loadImages })
-(Images);
+  { addImage, loadImages }
+)(Images);
