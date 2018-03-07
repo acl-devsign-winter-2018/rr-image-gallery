@@ -1,0 +1,24 @@
+@import '../../styles/variables.css';
+
+#container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  grid-template-rows: auto 1fr auto;
+}
+
+#main-header { grid-area: header; }
+#main-content { grid-area: main; }
+#main-footer { grid-area: footer; }
+
+#main-content {
+  margin: 0 auto;
+  width: 85%;
+}
+
+#main-footer {
+  text-align: center;
+}
