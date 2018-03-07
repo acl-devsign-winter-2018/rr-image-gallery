@@ -1,4 +1,4 @@
-import  { images, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducer';
+import  { images, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
 
 const imageToAdd = { id: 123, title: 'My Life', url: 'none.jpg', album: 1, description: 'moody' };
 
