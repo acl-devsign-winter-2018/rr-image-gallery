@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import Error from '../Error';
 
 export default class Header extends Component {
 
@@ -16,6 +17,7 @@ export default class Header extends Component {
               {/* <Route path="/movies" render={() => <li>~</li>}/> */}
             </ul>
           </nav>
+          <Error/>
         </section> 
       </header>
     );
