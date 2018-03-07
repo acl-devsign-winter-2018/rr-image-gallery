@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addImage, loadImages } from './actions';
+import ImageForm from './ImageForm';
 import Image from './Image';
+
 
 class Images extends Component {
   componentDidMount() {
@@ -14,16 +16,19 @@ class Images extends Component {
   
   render() {
     const { images, addImage } = this.props;
+    
     return (
-      <section className="images">
-        <ul>
+      <div className="images-container">
+        <ImageForm onComple={addImage}/>
+        <ul lcassName="images">
           {images.map(image => <Image key={image.id} {...image}/>)}
         </ul>
-      </section>
+      </div>
     );
   }
 }
 
 export default connect (
-  state => ({ images: state.images }),
-  { addImage })(loadImages);
+  state => ({ images: state.imagesByAlbum }),
+  { addImage, loadImages }
+)(Images);

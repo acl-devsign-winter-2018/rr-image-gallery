@@ -21,6 +21,6 @@ export function addImage(image) {
 export function removeImage(id) {
   return {
     type: IMAGE_REMOVE,
-    payload: albumsApi.removeImage(id).then(() => id)
+    payload: albumsApi.remove(id).then(() => id)
   };
 }

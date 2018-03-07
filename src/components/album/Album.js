@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import Images from '../images/Images';
 import { connect } from 'react-redux';
-import { addAlbum, loadAlbum } from './actions';
+import { loadAlbum } from './actions';
 
 
 class Album extends Component {
   
   componentDidMount() {
+    this.handleLoad();
+  }
+  
+  handleLoad() {
     this.props.loadAlbum();
   }
 
   render() {
-    const { addAlbum, name } = this.props;
+    const { album } = this.props;
+    const { name } = album;
     return (
       <div>
         <h1>{name}</h1>
@@ -22,6 +27,6 @@ class Album extends Component {
 }
 
 export default connect(
-  state => ({ images: state.images }),
-  { addAlbum, loadAlbum }
+  state => ({ album: state.album }),
+  { loadAlbum }
 )(Album);
