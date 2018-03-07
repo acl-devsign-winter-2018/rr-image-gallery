@@ -1,18 +1,18 @@
-import { ALBUM_LOAD, IMAGE_REMOVE, IMAGE_ADD } from './reducers';
+import { IMAGE_LOAD, IMAGE_REMOVE, IMAGE_ADD } from './reducers';
 import albumApi from '../../../services/albumApi';
 
 
-export const doLoadAlbum = api => () => {
+export const doLoadImage = api => () => {
   return {
-    type: ALBUM_LOAD,
+    type: IMAGE_LOAD,
     payload: api.load()
   };
 };
 
-export function loadAlbum() {
+export function loadImage(Id) {
   return {
-    type: ALBUM_LOAD,
-    payload: albumApi.load()
+    type: IMAGE_LOAD,
+    payload: albumApi.load(Id)
   };
 }
 

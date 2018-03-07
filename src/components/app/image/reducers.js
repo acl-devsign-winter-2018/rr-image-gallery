@@ -1,12 +1,12 @@
 export const IMAGE_ADD = 'IMAGE_ADD';
 // export const ALBUM_UPDATE = 'ALBUM_UPDATE';
 export const IMAGE_REMOVE = 'IMAGE_REMOVE';
-export const ALBUM_LOAD = 'ALBUM_LOAD';
+export const IMAGE_LOAD = 'IMAGE_LOAD';
 
 export function images(state = [], { type, payload }) {
   switch(type) {
 
-    case ALBUM_LOAD:
+    case IMAGE_LOAD:
       return payload.images;
 
     case IMAGE_ADD:
@@ -16,7 +16,7 @@ export function images(state = [], { type, payload }) {
       ];
 
     case IMAGE_REMOVE:
-      return state.filter(album => album.id !== payload);
+      return state.filter(image => image.id !== payload);
 
     // case ALBUM_UPDATE: {
     //   const index = state.findIndex(album => album.id === payload.id);

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Image.css';
 import { connect } from 'react-redux';
-import { loadAlbum, addImage } from './actions';
-import ImageForm from './ImageForm';
+import { loadImage, addImage } from './actions';
+// import ImageForm from './ImageForm';
 import Image from './Image';
 
 
@@ -14,16 +14,16 @@ class Images extends Component {
   }
 
   handleLoad = () => {
-    this.props.loadAlbum();
+    loadImage();
   };
 
   render() { 
-    const { images, addImage } = this.props;
+    const { images } = this.props;
     return (
       <section className="main-container maxwidth-wrap">
-        <div className="add-contain">
+        {/* <div className="add-contain">
           <ImageForm onEdit={addImage}/>
-        </div>
+        </div> */}
         <ul className="image-ul">
           {images.map(album => <Image key={album.id} {...album}/>)}
         </ul>
@@ -35,5 +35,5 @@ class Images extends Component {
 
 export default connect(
   state => ({ images: state.images }),
-  { loadAlbum, addImage }
+  { loadImage, addImage }
 )(Images);

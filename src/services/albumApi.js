@@ -16,8 +16,8 @@ function loadAlbums() {
   return doFetch(`${URL}/albums`);
 }
 
-function load() {
-  return doFetch(`${URL}/albums/${albumId}`);
+function load(Id) {
+  return doFetch(`${URL}/albums/${Id}`);
 }
 
 function add(image) {
