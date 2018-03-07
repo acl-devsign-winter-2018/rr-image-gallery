@@ -1,10 +1,11 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-//import reducers
+import { images } from './components/image/reducers';
 import thunk from 'redux-thunk';
+import promiseMiddleware from './promiseMiddleware';
 
 
 const reducer = combineReducers({
-  //reducers go here
+  images
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -12,7 +13,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   reducer,
   composeEnhancers(
-    applyMiddleware(thunk) 
+    applyMiddleware(thunk, promiseMiddleware) 
   )
 );
 

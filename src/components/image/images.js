@@ -30,7 +30,8 @@ class Images extends Component {
         <ImageForm onComplete={addImage}/>
 
         <ul className="images">
-          {images.map(image => <Image key={image.id} {...image}/>)}
+          {images.images &&
+          images.images.map(image => <Image key={image.id} {...image}/>)}
         </ul>
       </div>
     );

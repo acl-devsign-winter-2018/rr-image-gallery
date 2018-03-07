@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './app.css';
-import { connect } from '../image/Images';
-import Images from '../image/Images';
+// import { connect } from '../image/Images';
+import Images from './image/Images';
 
 
 export default class App extends Component {

@@ -1,5 +1,7 @@
-import { IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducer';
+import { IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
 import galleryApi from '../../services/galleryApi';
+
+// const album = '5a9f614c56745c0021e1b928';
 
 export function loadImages() {
   return {
@@ -8,6 +10,7 @@ export function loadImages() {
   };
 }
 export function addImage(image) {
+  // image.album = album;
   return {
     type: IMAGE_ADD,
     payload: galleryApi.add(image)
