@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadAlbums } from './actions';
+import { loadAlbum } from './actions';
 import { Link } from 'react-router-dom';
 import Images from '../image/Images';
 
 class AlbumContain extends Component {
   
   componentDidMount() {
-    const { Id, loadAlbums } = this.props;
-    loadAlbums(Id);
+    const { Id, loadAlbum } = this.props;
+    loadAlbum(Id);
   }
 
   render() {
     const { album } = this.props;
+    const { name } = album;
     
     return (
       <div>
-        <h3><Link to="/">{album.name}</Link></h3>
+        <h3><Link to="/">{name}</Link></h3>
         <Images/>
       </div>
     );
@@ -28,5 +29,5 @@ export default connect(
     album: state.album,
     Id: props.match.params.id
   }),
-  { loadAlbums }
+  { loadAlbum }
 )(AlbumContain);

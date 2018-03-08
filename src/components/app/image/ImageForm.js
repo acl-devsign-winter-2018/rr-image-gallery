@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
 import './Image.css';
+import { connect } from 'react-redux';
 
-export default class ImageForm extends Component {
+class ImageForm extends Component {
 
-  constructor(props) {
-    super(props);
+  state = {
+    title: '',
+    description: '',
+    url: ''
+  };
+  
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      title: '',
-      description: '',
-      url: ''
-    };
-  }
+  //   this.state = {
+  //     title: '',
+  //     description: '',
+  //     url: ''
+  //   };
+  // }
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onEdit({
-      ...this.state
-    });
-    this.setState({ 
-      title: '',
-      description: '',
-      url: ''
-    });
+    this.props.onComplete({
+      ...this.state,
+      album: this.props.album
+    })
+      .then(() => {
+        this.setState({ 
+          title: '',
+          description: '',
+          url: ''
+        });
+      });
   };
 
   handleChange = ({ target }) => {
@@ -49,5 +59,8 @@ export default class ImageForm extends Component {
       </form>
     );
   }
-
 }
+
+export default connect(
+  (state) => ({ album: state.album.id })
+)(ImageForm);
