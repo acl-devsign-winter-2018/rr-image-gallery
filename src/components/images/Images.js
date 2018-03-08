@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { loadImages, addImage, loadAlbums } from './actions';
 import Image from './Image';
 import AddImageForm from '../form/addImageForm';
+import Filter from './Filter';
+import { filteredImageSelector } from './reducers';
 
 class Images extends Component {
 
@@ -22,6 +24,7 @@ class Images extends Component {
           :
           null
         } 
+        <Filter/>
         <ul>
           {image.map(image => <Image albumId={this.props.id} key={image.id} {...image}/>)}
         </ul>
@@ -32,7 +35,7 @@ class Images extends Component {
 
 export default connect(
   (state, props) => ({ 
-    image: state.image,
+    image: filteredImageSelector(state),
     album: state.album,
     id: props.match.params.id
   }),
