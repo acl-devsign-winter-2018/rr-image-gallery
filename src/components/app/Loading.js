@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loading } from './reducers';
+
 
 
 class Loading extends Component {

@@ -26,6 +26,9 @@ class Albums extends Component {
 }
 
 export default connect(
-  state => ({ albums: state.album }),
+  state => ({ 
+    albums: state.album,
+    loading: state.loading
+  }),
   { loadAlbums }
 )(Albums);
