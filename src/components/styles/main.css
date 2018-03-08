@@ -93,3 +93,10 @@ img{
 #imgContainer{
   padding: 10px;
 }
+
+#loaderIcon{
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  size: 40px;
+}
