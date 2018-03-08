@@ -35,16 +35,16 @@ export default class AddImage extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="addImage">
         <div className="addInput">
-          <label htmlFor="title">Image Title
-          <input required id="title" value={title} onChange={this.handleChange}name="title"/>
+          <label htmlFor="title">
+            <input required id="title" name="title"value={title} placeholder="Image Title" onChange={this.handleChange}/>
           </label>
 
-          <label htmlFor="description">Image Description
-          <input required id="description" name="description" value={description} onChange={this.handleChange}/>
+          <label htmlFor="description">
+            <input required id="description" name="description" value={description} placeholder="Image Description" onChange={this.handleChange} />
           </label>
 
-          <label htmlFor="url">Image URL
-          <input required id="url" name="url" value={url} onChange={this.handleChange}/>
+          <label htmlFor="url">
+            <input required id="url" name="url" value={url} placeholder="Image URL" onChange={this.handleChange}/>
           </label>
         </div>
         <button type="submit">Add</button>

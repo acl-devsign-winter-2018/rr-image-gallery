@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './app.css';
 import Albums from '../album/Albums';
-import { BrowserRouter as Router } from 'react-router-dom';
+import Album from '../album/Album';
 
 class App extends Component {
   
@@ -11,13 +12,16 @@ class App extends Component {
     return (
       <div>
         <header>
-          <h1>Image Gallery</h1>
+          <h1>Image Galleries</h1>
         </header>
-        <main>
-          <Router>
+        <Router>
+          <main>
             <Albums/>
-          </Router>
-        </main>
+            <Switch>
+              <Route path="/albums/:id" component={Album}/>
+            </Switch>
+          </main>
+        </Router>
       </div>  
     );
   }

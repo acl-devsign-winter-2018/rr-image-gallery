@@ -7,9 +7,12 @@
 
   li {
     background: black;
-    color: white;
     margin: 4px;
     padding: .5rem;
     &:hover { background: orangered; color: black; }
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 }
