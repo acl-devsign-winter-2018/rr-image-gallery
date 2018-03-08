@@ -32,7 +32,7 @@ export class Albums extends Component {
             </li>;
           })}
         </ul>
-        <Album/>
+        {/* <Album/> */}
       </div>
     );
   }

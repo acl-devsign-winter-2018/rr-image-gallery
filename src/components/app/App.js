@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './app.css';
+import Header from './Header';
 import Albums from '../album/Albums';
 import Album from '../album/Album';
 
@@ -11,16 +12,17 @@ class App extends Component {
 
     return (
       <div>
-        <header>
-          <h1>Image Galleries</h1>
-        </header>
         <Router>
-          <main>
-            <Albums/>
-            <Switch>
-              <Route path="/albums/:id" component={Album}/>
-            </Switch>
-          </main>
+          <div>
+            <Header/>
+            <main>
+              {/* <Albums/> */}
+              <Switch>
+                <Route path="/" component={Albums}/>
+                <Route path="/albums/:id" component={Album}/>
+              </Switch>
+            </main>
+          </div>
         </Router>
       </div>  
     );
