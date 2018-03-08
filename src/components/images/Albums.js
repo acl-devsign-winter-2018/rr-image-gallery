@@ -15,7 +15,7 @@ class Albums extends Component {
     const { albums } = this.props;
     return (
 
-      <ul>
+      <ul id="albumUl">
         {albums.map((album => {
           return <Album key={album.id} {...album}/>;
         }))}

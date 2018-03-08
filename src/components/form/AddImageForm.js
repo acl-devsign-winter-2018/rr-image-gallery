@@ -21,7 +21,7 @@ export default class addImageForm extends Component{
       ...this.state
     });
     this.setState({ title: '', url: '', description: '' });
-  }
+  };
 
   render(){
     const { title, url, description } = this.state;

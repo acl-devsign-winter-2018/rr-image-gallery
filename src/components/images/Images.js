@@ -5,6 +5,7 @@ import Image from './Image';
 import AddImageForm from '../form/addImageForm';
 import Filter from './Filter';
 import { filteredImageSelector } from './reducers';
+import '../styles/main.css';
 
 class Images extends Component {
 
