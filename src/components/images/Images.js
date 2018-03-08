@@ -5,9 +5,6 @@ import Image from './Image';
 import AddImageForm from '../form/addImageForm';
 
 class Images extends Component {
-  // state = {
-  //   editing: false
-  // };
 
   componentDidMount(){
     this.props.loadImages(this.props.id);
@@ -17,12 +14,16 @@ class Images extends Component {
 
   render(){
     const { image, addImage, id } = this.props;
-
+  
     return (
       <div>
-        <AddImageForm id={id} onEdit={addImage}/>
+        { (this.props.id === '5a9ec831d22df00021b2c649') ? 
+          <AddImageForm id={id} onEdit={addImage}/>
+          :
+          null
+        } 
         <ul>
-          {image.map(image => <Image key={image.id} {...image}/>)}
+          {image.map(image => <Image albumId={this.props.id} key={image.id} {...image}/>)}
         </ul>
       </div>
     );

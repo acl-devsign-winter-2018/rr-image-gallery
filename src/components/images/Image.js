@@ -4,14 +4,19 @@ import { removeImage } from './actions';
 
 
 class Image extends Component{
+ 
   render() {
-    const { title, url, description, id, removeImage } = this.props;
+    const { title, url, description, id, removeImage, albumId } = this.props;
     return (
       <div>
         <h1>{title}</h1>
         <img src={url} alt={description}/>
         <p>{description}</p>
-        <button onClick={() => removeImage(id)}>Delete</button>
+        { (albumId === '5a9ec831d22df00021b2c649') ? 
+          <button onClick={() => removeImage(id)}>Delete</button>
+          :
+          null
+        } 
       </div>
     );
 
