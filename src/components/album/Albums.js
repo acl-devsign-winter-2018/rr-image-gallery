@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { loadAlbums } from './actions';
 import Album from './Album';
 
+
 class Albums extends Component {
   componentDidMount() {
     this.props.loadAlbums();
@@ -15,7 +16,9 @@ class Albums extends Component {
       <div>
         <h2>Albums</h2>
         <ul>
-          {albums.map(album => <Album key={album.id} {...album}/>)}
+          {albums.map(album => {
+            return <Album key={album.id} {...album}/>;
+          })}
         </ul>
       </div>
     );
@@ -23,6 +26,9 @@ class Albums extends Component {
 }
 
 export default connect(
-  state => ({ albums: state.albums }),
+  state => ({ 
+    albums: state.albums, 
+    loading: state.loading
+  }),
   { loadAlbums }
 )(Albums);

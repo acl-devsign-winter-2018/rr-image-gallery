@@ -29,6 +29,8 @@ class Images extends Component {
 }
 
 export default connect (
-  state => ({ images: state.imagesByAlbum }),
+  (state, props) => ({ 
+    images: state.imagesByAlbum,
+    id: props.match.params.id }),
   { addImage, loadImages }
 )(Images);
