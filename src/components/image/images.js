@@ -23,11 +23,12 @@ class Images extends Component {
 
 
   render() {
-    const { images, addImage } = this.props;
+    const { images, addImage, loading } = this.props;
 
     return (
       <div className="container"> 
         <ImageForm onComplete={addImage}/>
+        
         <section className="grid">
           <ul>
             {images.images &&
@@ -43,3 +44,6 @@ export default connect(
   state => ({ images: state.images }),
   { addImage, loadImages }
 )(Images);
+
+
+//fist line what i want from the store

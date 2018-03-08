@@ -4,12 +4,14 @@ import './app.css';
 // import { connect } from '../image/Images';
 import Images from '../image/Images';
 import Error from './Error';
+import { connect } from 'react-redux';
 
-export default class App extends Component {
+
+class App extends Component {
   
 
   render() {
-    const { error } = this.props;
+    const { error, loading } = this.props;
     
     return (
 
@@ -19,6 +21,7 @@ export default class App extends Component {
           <div id="loader">
             { error && <Error error={error}/>}
           </div>
+          <div>Loading status is: {loading ? 'loading!!!!' : 'not loading!' }</div>
           <Switch>
             <Route exact path="/" component={Images}/>
             <Redirect to="/"/>
@@ -32,5 +35,13 @@ export default class App extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    loading: state.loading,
+    error: state.error
+  };
+}
 
-
+export default connect(
+  mapStateToProps, null
+)(App);
