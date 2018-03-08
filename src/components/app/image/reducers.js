@@ -25,7 +25,7 @@ export function filter(state = '', { type, payload }) {
     case APPLY_FILTER:
       return payload;
 
-    case ALBUM_LOAD:
+    case IMAGE_LOAD:
       return '';
 
     default:
