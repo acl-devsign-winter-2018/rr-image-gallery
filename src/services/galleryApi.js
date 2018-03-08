@@ -12,11 +12,16 @@ const doFetch = (url, options = {}) => {
     });
 };
 
-function load() {
-  return doFetch(`${URL}albums/${albumId}`);
+function loadAll() {
+  return doFetch(`${URL}albums`);
+}
+
+function loadAlbum(id) {
+  return doFetch(`${URL}albums/${id}`);
 }
 
 function add(image) {
+  image.album = albumId;
   return doFetch(`${URL}images`, {
     method: 'POST',
     body: JSON.stringify(image),
@@ -33,7 +38,8 @@ function remove(id) {
 }
 
 export default {
-  load,
+  loadAll,
+  loadAlbum,
   add,
   remove
 };

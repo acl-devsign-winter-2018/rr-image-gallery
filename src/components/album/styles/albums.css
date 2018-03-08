@@ -1,0 +1,15 @@
+.albumList {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+
+  li {
+    background: black;
+    color: white;
+    margin: 4px;
+    padding: .5rem;
+    &:hover { background: orangered; color: black; }
+  }
+}

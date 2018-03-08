@@ -1,0 +1,14 @@
+.addImage, .addInput {
+  display: flex;
+}
+
+.addInput {
+  flex-direction: column;
+}
+
+.addImage {
+  margin: 2rem;
+  flex-direction: row;
+  button {
+  }
+}

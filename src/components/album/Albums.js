@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadAlbum } from './actions';
+import { loadAlbums } from './actions';
 import Album from './Album';
+import './styles/albums.css';
+
 export class Albums extends Component {
 
   componentDidMount() {
@@ -9,7 +11,7 @@ export class Albums extends Component {
   }
   
   handleLoad = () => {
-    this.props.loadAlbum();
+    this.props.loadAlbums();
   }
 
   render() {
@@ -17,7 +19,11 @@ export class Albums extends Component {
     console.log(albums);
     return (
       <div>
-        <h2>albums</h2>
+        <ul className="albumList">
+          {albums.map(album => {
+            return <li key={album.id}>{album.name}</li>;
+          })}
+        </ul>
         <Album/>
       </div>
     );
@@ -26,5 +32,5 @@ export class Albums extends Component {
 
 export default connect(
   state => ({ albums: state.albums }),
-  { loadAlbum }
+  { loadAlbums }
 )(Albums);

@@ -1,24 +1,31 @@
-import { ALBUM_LOAD, IMAGE_ADD, IMAGE_DELETE } from './reducers';
+import { ALBUMS_LOAD, ALBUM_LOAD, IMAGE_ADD, IMAGE_DELETE } from './reducers';
 import galleryApi from '../../services/galleryApi';
 
 
-export function loadAlbum() {
+export function loadAlbums() {
+  return {
+    type: ALBUMS_LOAD,
+    payload: galleryApi.loadAll()
+  };
+}
+
+export function loadAlbum(id) {
   return {
     type: ALBUM_LOAD,
-    payload: galleryApi.load()
+    payload: galleryApi.load(id)
   };
 }
 
-export function addImage() {
+export function addImage(image) {
   return {
     type: IMAGE_ADD,
-    payload: galleryApi.add()
+    payload: galleryApi.add(image)
   };
 }
 
-export function deleteImage() {
+export function deleteImage(id) {
   return {
     type: IMAGE_DELETE,
-    payload: galleryApi.remove()
+    payload: galleryApi.remove(id).then(() => id)
   };
 }

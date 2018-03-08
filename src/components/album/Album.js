@@ -22,6 +22,7 @@ class Album extends Component {
   }
 }
 
-export default connect({
-  addImage 
-})(Album);
+export default connect(
+  null,
+  { addImage }
+)(Album);
