@@ -9,16 +9,6 @@ class ImageForm extends Component {
     description: '',
     url: ''
   };
-  
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     title: '',
-  //     description: '',
-  //     url: ''
-  //   };
-  // }
 
   handleSubmit = event => {
     event.preventDefault();

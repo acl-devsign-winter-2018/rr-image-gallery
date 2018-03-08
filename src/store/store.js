@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { images } from '../components/app/image/reducers';
+import { images, filter } from '../components/app/image/reducers';
 import { albums, album } from '../components/app/albums/reducers';
 import { loading, error } from '../components/app/reducers';
 import thunk from 'redux-thunk';
@@ -8,6 +8,7 @@ import promiseMiddleware from './promiseMiddleware';
 // combine reducer
 const reducer = combineReducers({
   images,
+  filter,
   albums,
   album,
   loading,
