@@ -7,7 +7,6 @@ import Images from '../images/Images';
 import '../styles/main.css';
 import '../styles/reset.css';
 
-
 export default class App extends Component{
 
   render(){

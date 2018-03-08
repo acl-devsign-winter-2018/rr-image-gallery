@@ -9,6 +9,7 @@ class Filter extends Component{
   };
 
   render(){
+    
     const { filter } = this.props;
     
     return (

@@ -19,7 +19,7 @@ class Images extends Component {
     return (
       <div>
         <section id="formFilter">
-          { (this.props.id === '5a9ec831d22df00021b2c649') ?
+          {(this.props.id === '5a9ec831d22df00021b2c649') ?
             <div id="imageForm">
               ADD AN IMAGE <AddImageForm id={id} onEdit={addImage}/>
             </div>

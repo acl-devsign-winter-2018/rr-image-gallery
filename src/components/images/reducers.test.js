@@ -17,19 +17,19 @@ describe('image reducers', () => {
 
   const imageToLoad = 
   {
-    _id: '5a9ec831d22df00021b2c649',
-    name: 'heiner',
+    _id: '123',
+    name: 'bob',
     __v: 0,
-    id: '5a9ec831d22df00021b2c649',
+    id: '123',
     images: [
       {
-        '_id': '5a9f84a7874c250021322c2c',
+        '_id': '456',
         'title': 'beach',
-        'url': 'http://www.hawaiigaga.com/Images/attractions/puu-poa-beach-s1.jpg',
+        'url': 'aURL',
         'description': '',
-        'album': '5a9ec831d22df00021b2c649',
+        'album': '123',
         '__v': 0,
-        'id': '5a9f84a7874c250021322c2c'
+        'id': '789'
       }
     ]
   };
@@ -53,6 +53,4 @@ describe('image reducers', () => {
     const state = album([], { type: ALBUM_LOAD, payload: [] });
     expect(state).toEqual([]);
   });
-
-
 });

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeImage } from './actions';
 
-
 class Image extends Component{
  
   render() {
@@ -19,12 +18,10 @@ class Image extends Component{
         } 
       </div>
     );
-
   }
 }
 
 export default connect (
   state => state,
   { removeImage }
-
 )(Image);

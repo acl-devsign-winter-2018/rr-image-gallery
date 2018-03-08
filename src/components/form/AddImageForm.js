@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-
 export default class addImageForm extends Component{
   constructor(props){
     super(props);
@@ -41,5 +39,4 @@ export default class addImageForm extends Component{
       </form>
     );
   }
-
 }
