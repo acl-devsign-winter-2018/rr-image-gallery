@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './app.css';
 import Albums from '../album/Albums';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 class App extends Component {
   
@@ -13,9 +14,10 @@ class App extends Component {
           <h1>Image Gallery</h1>
         </header>
         <main>
-          <Albums/>
+          <Router>
+            <Albums/>
+          </Router>
         </main>
-
       </div>  
     );
   }

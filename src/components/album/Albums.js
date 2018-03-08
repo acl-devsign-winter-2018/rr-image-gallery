@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadAlbums, loadAlbum } from './actions';
+import { Link } from 'react-router-dom';
 import Album from './Album';
 import './styles/albums.css';
 
@@ -18,7 +19,6 @@ export class Albums extends Component {
     const id = target.key;
     console.log(id);
     // this.props.loadAlbum(id);
-
   }
 
   render() {
@@ -27,7 +27,9 @@ export class Albums extends Component {
       <div>
         <ul className="albumList">
           {albums.map(album => {
-            return <li key={album.id} onClick={this.handleAlbum}>{album.name}</li>;
+            return <li key={album.id}>
+              <Link to={`/albums/${album.id}`}>{album.name}</Link>
+            </li>;
           })}
         </ul>
         <Album/>
