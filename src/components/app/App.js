@@ -10,7 +10,6 @@ import '../../styles/variables.css';
 export default class App extends Component {
 
   render() {
-    const { loading, error } = this.props;
     return (
       <Router>
         <div>
@@ -29,6 +28,13 @@ export default class App extends Component {
   }
 }
 
+// export default connect(
+//   state => ({
+//     loading: state.loading,
+//     error: state.error
+//   }),
+//   null
+// )(App);
 
 
 
@@ -56,11 +62,3 @@ export default class App extends Component {
 //     );
 //   }
 // }
-
-// export default connect(
-//   state => ({
-//     loading: state.loading,
-//     error: state.error
-//   }),
-//   null
-// )(App);

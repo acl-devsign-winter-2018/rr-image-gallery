@@ -1,4 +1,3 @@
-// export const IMAGE_LOAD = 'IMAGE_LOAD';
 export const IMAGE_ADD = 'IMAGE_ADD';
 export const IMAGE_REMOVE = 'IMAGE_REMOVE';
 import { ALBUM_LOAD } from '../album/reducers';

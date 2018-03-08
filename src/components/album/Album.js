@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Images from '../images/Images';
 import { connect } from 'react-redux';
 import { loadAlbum } from './actions';
+import { Link } from 'react-router-dom';
 
 class Album extends Component {
   
@@ -14,18 +15,18 @@ class Album extends Component {
   }
 
   render() {
-    const { album } = this.props;
-    const { name } = album;
+    const { id, name } = this.props;
+
     return (
-      <div>
-        <h1>{name}</h1>
-        <Images/>
-      </div>
+      <li>
+        <Link to={`/albums/${id}`}><span>{name}</span></Link>
+      </li>
     );
   }
 }
 
 export default connect(
-  state => ({ album: state.album }),
+  (state) => ({ 
+    album: state.album }),
   { loadAlbum }
 )(Album);

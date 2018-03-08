@@ -1,12 +1,14 @@
 import { applyMiddleware, compose, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { album } from '../components/album/reducers';
+import { albums } from '../components/album/reducers';
 import { imagesByAlbum } from '../components/images/reducers';
 import { loading, error } from '../components/app/reducers';
 import promiseMiddleware from './promiseMiddleware';
 
 const reducer = combineReducers({
   album,
+  albums,
   imagesByAlbum,
   loading,
   error

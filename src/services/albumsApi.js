@@ -1,5 +1,5 @@
 const URL = 'https://image-gallery-server.herokuapp.com/api';
-const id = '5a9ee071d22df00021b2c65c';
+// const id = '5a9ee071d22df00021b2c65c';
 
 const doFetch = (url, options = {}) => {
   return fetch(url, options)
@@ -14,12 +14,12 @@ const doFetch = (url, options = {}) => {
     });
 };
 
-function load() {
-  return doFetch(`${URL}/albums/${id}`);
-}
-
 function loadAlbums() {
   return doFetch(`${URL}/albums`);
+}
+
+function load(id) {
+  return doFetch(`${URL}/albums/${id}`);
 }
 
 function add(image) {
