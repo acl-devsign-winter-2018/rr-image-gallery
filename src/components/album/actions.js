@@ -1,10 +1,10 @@
 import { ALBUM_LOAD, ALBUMS_LOAD } from './reducers';
 import albumsApi from '../../services/albumsApi';
 
-export function loadAlbum() {
+export function loadAlbum(id) {
   return {
     type: ALBUM_LOAD,
-    payload: albumsApi.load()
+    payload: albumsApi.load(id)
   };
 }
 

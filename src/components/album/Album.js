@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Images from '../images/Images';
 import { connect } from 'react-redux';
 import { loadAlbum } from './actions';
 import { Link } from 'react-router-dom';
@@ -7,13 +6,9 @@ import { Link } from 'react-router-dom';
 class Album extends Component {
   
   componentDidMount() {
-    this.handleLoad();
+    this.props.loadAlbum(this.props.id);
   }
   
-  handleLoad() {
-    this.props.loadAlbum();
-  }
-
   render() {
     const { id, name } = this.props;
 
