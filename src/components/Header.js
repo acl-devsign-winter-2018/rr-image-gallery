@@ -7,7 +7,7 @@ export default class Header extends Component{
       <header id="header">
         <h1 id='headerH1'>Image Gallery</h1>
         <ul id="headerUl">
-          <li><Link to="/">Home</Link></li>
+          <li id="headerLi"><Link to="/">Home</Link></li>
         </ul>
       </header>
     );

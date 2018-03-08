@@ -30,8 +30,9 @@ body{
   color: white;
   font-size: 1rem;
   text-align: center;
-  margin-bottom: .5rem;
 }
+
+
 
 a{
   color: white
@@ -50,6 +51,7 @@ a:visited{
 
 #imageUl{
   background: white;
+  min-height: 400px;
   color: black;
   font-size: 1.5rem;
   width: 90%;
@@ -63,4 +65,31 @@ a:visited{
 img{
   height: auto;
   width: 250px;
+}
+
+#formFilter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(97, 97, 104, 0.548);
+}
+
+#filterContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgba(97, 97, 104, 0.548);
+  font-size: 1.5rem;
+  align-items: center;
+  padding: 10px;
+}
+
+#imageForm{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#imgContainer{
+  padding: 10px;
 }

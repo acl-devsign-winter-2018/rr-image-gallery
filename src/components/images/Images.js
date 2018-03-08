@@ -13,19 +13,23 @@ class Images extends Component {
     this.props.loadImages(this.props.id);
   }
   
-
-
   render(){
     const { image, addImage, id } = this.props;
   
     return (
       <div>
-        { (this.props.id === '5a9ec831d22df00021b2c649') ? 
-          <AddImageForm id={id} onEdit={addImage}/>
-          :
-          null
-        } 
-        Filter:<Filter/>
+        <section id="formFilter">
+          { (this.props.id === '5a9ec831d22df00021b2c649') ?
+            <div id="imageForm">
+              ADD AN IMAGE <AddImageForm id={id} onEdit={addImage}/>
+            </div>
+            :
+            null
+          } 
+        </section>
+        <div id="filterContainer">
+          Filter:<Filter/>
+        </div>
         <ul id='imageUl'>
           {image.map(image => <Image albumId={this.props.id} key={image.id} {...image}/>)}
         </ul>
