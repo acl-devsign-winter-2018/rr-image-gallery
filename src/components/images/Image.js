@@ -22,6 +22,6 @@ class Image extends Component {
 }
 
 export default connect(
-  null,
+  state => state,
   { removeImage }
 )(Image);

@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { loadAlbum } from './actions';
 
-class Album extends Component {
-
-  componentDidMount() {
-    const { id, loadAlbum } = this.props;
-    loadAlbum(id);
-  }
+export default class Album extends Component {
   
   render() {
     const { id, name } = this.props;
@@ -23,9 +16,9 @@ class Album extends Component {
   }
 }
 
-export default connect(
-  (state) => ({ 
-    album: state.album,
-  }),
-  { loadAlbum }
-)(Album);
+// export default connect(
+//   (state) => ({ 
+//     album: state.album,
+//   }),
+//   null
+// )(Album);

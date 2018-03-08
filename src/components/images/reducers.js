@@ -6,7 +6,10 @@ export function imagesByAlbum(state = [], { type, payload }) {
   switch(type) {
 
     case ALBUM_LOAD:
-      return payload.images;
+      return [
+        state,
+        ...payload
+      ];
 
     case IMAGE_ADD:
       return [
