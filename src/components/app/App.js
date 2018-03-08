@@ -4,7 +4,8 @@ import Albums from '../images/Albums';
 import Header from '../Header';
 import Loading from './Loading';
 import Images from '../images/Images';
-import './main.css';
+import '../styles/main.css';
+import '../styles/reset.css';
 
 
 export default class App extends Component{

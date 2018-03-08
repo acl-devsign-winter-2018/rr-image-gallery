@@ -24,8 +24,8 @@ class Images extends Component {
           :
           null
         } 
-        <Filter/>
-        <ul>
+        Filter:<Filter/>
+        <ul id='imageUl'>
           {image.map(image => <Image albumId={this.props.id} key={image.id} {...image}/>)}
         </ul>
       </div>

@@ -1,0 +1,41 @@
+.clip {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+body{
+  background-image: url('../../background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+
+#header{
+  background-color: rgba(97, 97, 104, 0.548);
+  height: auto;
+}
+
+#headerH1{
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#headerUl li{
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+a{
+  color: white
+}
+
+a:visited{
+  color: lightgrey
+}
+

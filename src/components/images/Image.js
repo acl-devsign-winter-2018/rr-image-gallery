@@ -8,7 +8,7 @@ class Image extends Component{
   render() {
     const { title, url, description, id, removeImage, albumId } = this.props;
     return (
-      <div>
+      <div id='imgContainer'>
         <h1>{title}</h1>
         <img src={url} alt={description}/>
         <p>{description}</p>

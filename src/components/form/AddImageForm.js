@@ -35,7 +35,7 @@ export default class addImageForm extends Component{
         Image URL:<input required name='url' placeholder = 'Image URL' value={url} onChange={this.handleChange}/>
         </label>
         <label htmlFor='title'>
-        Image Description:<input name='description' placeholder = 'Enter description (optional)' value={description} onChange={this.handleChange}/>
+        Description:<input name='description' placeholder = 'Enter description (optional)' value={description} onChange={this.handleChange}/>
         </label>
         <button type='submit'>Add Image</button>
       </form>
