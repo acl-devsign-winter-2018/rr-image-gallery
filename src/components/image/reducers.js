@@ -10,13 +10,17 @@ export function images(state = [], { type, payload }) {
     case IMAGE_LOAD:
       return payload;
     case IMAGE_ADD:
-      return [
+      return {
         ...state, 
-        payload
-      ];
+        images: [...state.images, payload]
+      };
     case IMAGE_REMOVE:
       // return state.filter(image => image.id !== payload);
+      console.log('i am state', state);
+      console.log('******************i am payload', payload);
+
       return { images: state.images.filter(image => image.id !== payload) };
+
     default: 
       return state;
   }
