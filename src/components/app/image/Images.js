@@ -4,23 +4,19 @@ import { connect } from 'react-redux';
 import { loadImage, addImage } from './actions';
 import ImageForm from './ImageForm';
 import Image from './Image';
+import Filter from './Filter';
+import { filteredImagesSelector } from './reducers';
+
 
 
 class Images extends Component {
 
-
-  // componentDidMount() {
-  //   this.handleLoad();
-  // }
-
-  // handleLoad = () => {
-  //   loadImage();
-  // };
-
   render() { 
     const { images, addImage } = this.props;
+
     return (
       <section className="main-container maxwidth-wrap">
+        <Filter/>
         <div className="add-contain">
           <ImageForm onComplete={addImage}/>
         </div>
@@ -34,6 +30,6 @@ class Images extends Component {
 }
 
 export default connect(
-  state => ({ images: state.images }),
+  state => ({ images: filteredImagesSelector(state) }),
   { loadImage, addImage }
 )(Images);

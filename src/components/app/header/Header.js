@@ -9,7 +9,7 @@ export default class Header extends Component {
     return (
       <header role="banner" id="header">
         <section className="head-container maxwidth-wrap">
-          <h1 className="logo">Plant Lab</h1>
+          <Link to="/album"><h1 className="logo">Plant Lab</h1></Link>
           <nav>
             <ul>
               <li><Link to="/albums">Albums</Link></li>

@@ -1,20 +1,12 @@
-import { IMAGE_REMOVE, IMAGE_ADD } from './reducers';
+import { IMAGE_REMOVE, IMAGE_ADD, APPLY_FILTER } from './reducers';
 import albumApi from '../../../services/albumApi';
 
-
-// export const doLoadImage = api => () => {
-//   return {
-//     type: IMAGE_LOAD,
-//     payload: api.load()
-//   };
-// };
-
-// export function loadImage(Id) {
-//   return {
-//     type: IMAGE_LOAD,
-//     payload: albumApi.load(Id)
-//   };
-// }
+export function applyFilter(filter) {
+  return {
+    type: APPLY_FILTER,
+    payload: filter
+  };
+}
 
 // const album = '5a9edd23d22df00021b2c654';
 export function addImage(image) {
@@ -24,13 +16,6 @@ export function addImage(image) {
     payload: albumApi.add(image)
   };
 }
-
-// export function updateAlbum(album) {
-//   return {
-//     type: ALBUM_UPDATE,
-//     payload: albumApi.update(album)
-//   };
-// }
 
 export function removeImage(id) {
   return {
