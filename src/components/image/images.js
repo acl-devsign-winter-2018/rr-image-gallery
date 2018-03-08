@@ -26,13 +26,14 @@ class Images extends Component {
     const { images, addImage } = this.props;
 
     return (
-      <div> 
+      <div className="container"> 
         <ImageForm onComplete={addImage}/>
-
-        <ul className="images">
-          {images.images &&
+        <section className="grid">
+          <ul>
+            {images.images &&
           images.images.map(image => <Image key={image.id} {...image}/>)}
-        </ul>
+          </ul>
+        </section>
       </div>
     );
   }

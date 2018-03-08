@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeImage } from './actions';
-
+import './image.css';
 
 class Image extends Component {
   render() {
@@ -13,8 +13,8 @@ class Image extends Component {
 
     return (
       <li>
-        <figure>
-          <img src={url} alt={title}/>
+        <figure className="cell">
+          <img className="responsive-image" src={url} alt={title}/>
           <figcaption>{description}</figcaption>
           <p>{album}</p>
           <button onClick={()=> removeImage(id)}>REMOVE</button>

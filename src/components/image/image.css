@@ -1,0 +1,15 @@
+.thumbnail {
+  flex: 0 0 100px;
+  width: 100px;
+  height: auto;
+  border: solid blue 3px;
+}
+
+.cell img {
+  display: block;
+  width: calc(100% / 3);
+}
+
+.responsive-image {
+  max-width: 100%;
+}
