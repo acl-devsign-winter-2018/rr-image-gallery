@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './imageForm.css';
+import { connect } from 'react-redux';
 
-export default class ImageForm extends Component {
+class ImageForm extends Component {
 
   state = {
     url: '',
@@ -12,7 +13,8 @@ export default class ImageForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.onComplete({
-      ...this.state
+      ...this.state,
+      album: this.props.album
     })
       .then(() => {
         this.setState({
@@ -54,3 +56,7 @@ export default class ImageForm extends Component {
     );
   }
 }
+
+export default connect(
+  (state) => ({ album: state.album.id })
+)(ImageForm);

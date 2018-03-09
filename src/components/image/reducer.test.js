@@ -1,4 +1,4 @@
-import { images, IMAGE_ADD, IMAGE_REMOVE } from './reducers';
+import { filter, images, IMAGE_ADD, IMAGE_REMOVE, FILTER_APPLY } from './reducers';
 import { ALBUM_LOAD } from '../album/reducers';
 
 const imageToAdd = {
@@ -8,6 +8,16 @@ const imageToAdd = {
   album: 123,
   description: 'testing images'
 };
+
+it('applies a filter', () => {
+  const state = filter('', { type: FILTER_APPLY, payload: 'can' });
+  expect(state).toEqual('can');
+});
+
+it('returns an default filter', () => {
+  const state = filter(undefined, {});
+  expect(state).toEqual('');
+});
 
 it('loads images', () => {
   const imagesToLoad = { images: [

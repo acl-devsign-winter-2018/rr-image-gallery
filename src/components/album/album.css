@@ -1,0 +1,9 @@
+
+.album-item {
+  a {
+    color: black;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
