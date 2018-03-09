@@ -15,9 +15,12 @@ export function album(state = {}, { type, payload }) {
     
     case ALBUM_ADD:
       return [
-        state,
-        ...payload
+        ...state,
+        payload
       ];
+
+    case ALBUM_REMOVE:
+      return state.filter(album => album.id !== payload);
     
     default:
       return state;

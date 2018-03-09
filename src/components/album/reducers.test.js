@@ -1,27 +1,45 @@
-import { album, ALBUM_LOAD, ALBUM_ADD, ALBUM_REMOVE } from './reducers';
+import { album, albums, ALBUMS_LOAD, ALBUM_ADD, ALBUM_REMOVE } from './reducers';
 
-it('has default empty object', () => {
-  const state = album(undefined, {});
-  expect(state).toEqual([]);
-});
+describe('Album Tests:', () => {
 
-it('loads album from api', () => {
-  const albumSamples = [
-    { name: 'Mosses', id: 111 },
-    { name: 'Lichens', id: 222 },
-  ];  
-  const state = album([], { type: ALBUM_LOAD, payload: albumSamples });
-  expect(state).toEqual(albumSamples);
-});
+  it('albums has default empty array', () => {
+    const state = albums(undefined, {});
+    expect(state).toEqual([]);
+  });
 
-const albumSample = { name: 'Mosses', id: 111 };
+  it('single album has default empty object', () => {
+    const state = album(undefined, {});
+    expect(state).toEqual({});
+  });
 
-it('adds an album', () => {
-  const state = album([], { type: ALBUM_ADD, payload: albumSample });
-  expect(state).toEqual([albumSample]);
-});
+  const albumSample = {
+    _id: '222',
+    name: 'Mosses',
+    __v: 0,
+    id: '222',
+    images: [{
+      '_id': '111',
+      'title': 'Mossy moss',
+      'url': 'mossphoto.com',
+      'description': '',
+      'album': '123',
+      '__v': 0,
+      'id': '111'
+    }]
+  };
 
-it('removes an album', () => {
-  const state = album([albumSample], { type: ALBUM_REMOVE, payload: 111 });
-  expect(state).toEqual([]);
+  it('loads albums', () => {
+    const state = albums([], { type: ALBUMS_LOAD, payload: albumSample });
+    expect(state).toEqual(albumSample);
+  });
+  
+  it('adds an album', () => {
+    const state = album([], { type: ALBUM_ADD, payload: albumSample });
+    expect(state).toEqual([albumSample]);
+  });
+  
+  it('removes an album', () => {
+    const state = album([albumSample], { type: ALBUM_REMOVE, payload: albumSample.id });
+    expect(state).toEqual([]);
+  });
 });

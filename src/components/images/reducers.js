@@ -22,7 +22,7 @@ export function imagesByAlbum(state = [], { type, payload }) {
       ];
 
     case IMAGE_REMOVE:
-      return state.filter(a => a.id !== payload);
+      return state.filter(image => image.id !== payload);
 
     default:
       return state;
