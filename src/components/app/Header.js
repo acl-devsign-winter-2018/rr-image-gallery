@@ -17,7 +17,6 @@ export default class Header extends Component {
         <nav>
           <ul>
             <li><Link to="/albums">All Albums</Link></li>
-            <li><Link to="/albums/5a9ee071d22df00021b2c65c">My Album</Link></li> 
           </ul>
         </nav>
         <Error/>
