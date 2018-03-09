@@ -1,27 +1,29 @@
 @import '../../styles/variables.css'; 
 
 .images-container {
-  .images {
-  }
+  display: flex;
   
   .image {
-    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
     figure {
       position: relative;
       border: 1.5px solid $maroon;
-      button, figcaption {
+      figcaption {
         position: absolute;
+        margin-top: 10px
       }
       button {
+        position: relative;
         background: $green;
-        color: $grey;
+        color: $grey
       }
       figcaption {
         color: white;
         width: 100%;
         text-align: center;
+        margin-top: 8px;
       }
     }
   }

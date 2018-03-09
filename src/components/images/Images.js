@@ -18,7 +18,7 @@ class Images extends Component {
         <section id="add-form">
           {(this.props.id === '5a9ee071d22df00021b2c65c') ?
             <div id="imageForm">
-              Add a Photo <ImageForm onComplete={addImage}/>
+              <ImageForm onComplete={addImage}/>
             </div>
             :
             <div></div>

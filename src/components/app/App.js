@@ -15,7 +15,6 @@ export default class App extends Component {
         <div>
           <Header/>
           <main>
-            <Loading/>
             <Switch>
               <Route path="/albums/:id" component={Images}/>
               <Route path="/albums" component={Albums}/>

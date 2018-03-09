@@ -16,9 +16,24 @@
 
 #main-content {
   margin: 0 auto;
-  width: 85%;
+  width: 80%;
 }
 
-#main-footer {
-  text-align: center;
+img {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+}
+
+h1, h2, h3, a {
+  color: $grey
+}
+
+ul {
+  list-style-type: none;
+  font-size: 1.5rem
+}
+
+a:visited {
+  color: $maroon
 }
