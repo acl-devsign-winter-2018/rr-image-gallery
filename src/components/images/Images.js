@@ -14,12 +14,21 @@ class Images extends Component {
     const { images, addImage, id } = this.props;
     
     return (
-      <div className="images-container">
-        {/* todo: add conditional if id === my id.  */}
-        <ImageForm onComplete={addImage}/>
-        <ul className="images">
-          {images.map(image => <Image album={id} key={image.id} {...image}/>)}
-        </ul>
+      <div>
+        <section id="add-form">
+          {(this.props.id === '5a9ee071d22df00021b2c65c') ?
+            <div id="imageForm">
+              Add a Photo <ImageForm onComplete={addImage}/>
+            </div>
+            :
+            <div></div>
+          } 
+        </section>
+        <div className="images-container">
+          <ul>
+            {images.map(image => <Image album={id} key={image.id} {...image}/>)}
+          </ul>
+        </div>
       </div>
     );
   }

@@ -15,10 +15,3 @@ export default class Album extends Component {
     );
   }
 }
-
-// export default connect(
-//   (state) => ({ 
-//     album: state.album,
-//   }),
-//   null
-// )(Album);
