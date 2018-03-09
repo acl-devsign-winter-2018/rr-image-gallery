@@ -1,11 +1,11 @@
-import { IMAGE_ADD, IMAGE_REMOVE, ALBUM_LOAD } from './reducers';
+import { IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
 import albumsApi from '../../services/albumsApi';
 
 const album = '5a9ee071d22df00021b2c65c';
 
 export function loadImages(id) {
   return {
-    type: ALBUM_LOAD,
+    type: IMAGE_LOAD,
     payload: albumsApi.load(id)
   };
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addImage, loadImages } from './actions';
-import { loadAlbums } from '../album/actions';
 import ImageForm from './ImageForm';
 import Image from './Image';
 import './images.css';
@@ -30,5 +29,5 @@ export default connect (
   (state, props) => ({ 
     images: state.imagesByAlbum,
     id: props.match.params.id }),
-  { addImage, loadImages, loadAlbums }
+  { addImage, loadImages }
 )(Images);

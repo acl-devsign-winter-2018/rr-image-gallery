@@ -5,7 +5,10 @@ export function album(state = {}, { type, payload }) {
   switch(type) {
     
     case ALBUM_LOAD:
-      return payload;
+      return [
+        state,
+        ...payload
+      ];
     
     default:
       return state;

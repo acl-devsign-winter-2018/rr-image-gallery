@@ -1,15 +1,12 @@
 export const IMAGE_ADD = 'IMAGE_ADD';
 export const IMAGE_REMOVE = 'IMAGE_REMOVE';
-import { ALBUM_LOAD } from '../album/reducers';
+export const IMAGE_LOAD = 'IMAGE_LOAD';
 
 export function imagesByAlbum(state = [], { type, payload }) {
   switch(type) {
 
-    case ALBUM_LOAD:
-      return [
-        state,
-        ...payload
-      ];
+    case IMAGE_LOAD:
+      return payload.images;
 
     case IMAGE_ADD:
       return [
