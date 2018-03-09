@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import { loadAlbums } from './actions';
 import Album from '../albums/Album';
+import './Album.css';
 
 class Albums extends Component {
   componentDidMount() {

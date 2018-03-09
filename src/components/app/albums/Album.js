@@ -8,7 +8,7 @@ export default class Album extends Component {
     const { id, name } = this.props;
 
     return (
-      <li className="album-item">
+      <li className="album-li">
         <Link to={`/albums/${id}`}>{name}</Link>
       </li>
     );
