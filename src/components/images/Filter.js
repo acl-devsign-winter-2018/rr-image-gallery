@@ -3,7 +3,13 @@ import { connect } from 'react-redux';
 import { applyFilter } from './actions';
 
 class Filter extends Component{
+  
+  handleFilter = ({ target }) => {
+    this.props.applyFilter(target.value);
+  };
+
   render(){
+    
     const { filter } = this.props;
     
     return (

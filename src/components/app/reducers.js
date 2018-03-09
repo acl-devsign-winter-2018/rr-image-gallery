@@ -14,6 +14,7 @@ export function loading(state = false, { type }) {
   }
 }
 
+export const errorSelector = state => state.error;
 const initialErrorState = null;
 
 export function error(state = initialErrorState, { type, payload }){

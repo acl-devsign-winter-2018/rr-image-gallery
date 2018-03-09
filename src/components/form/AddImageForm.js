@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-
-
 export default class addImageForm extends Component{
   constructor(props){
     super(props);
@@ -21,7 +19,7 @@ export default class addImageForm extends Component{
       ...this.state
     });
     this.setState({ title: '', url: '', description: '' });
-  }
+  };
 
   render(){
     const { title, url, description } = this.state;
@@ -35,11 +33,10 @@ export default class addImageForm extends Component{
         Image URL:<input required name='url' placeholder = 'Image URL' value={url} onChange={this.handleChange}/>
         </label>
         <label htmlFor='title'>
-        Image Description:<input name='description' placeholder = 'Enter description (optional)' value={description} onChange={this.handleChange}/>
+        Description:<input name='description' placeholder = 'Enter description (optional)' value={description} onChange={this.handleChange}/>
         </label>
         <button type='submit'>Add Image</button>
       </form>
     );
   }
-
 }

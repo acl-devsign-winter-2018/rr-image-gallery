@@ -41,7 +41,11 @@ const filterSelector = state => state.filter;
 const imageSelector = state => state.image;
 
 export const filteredImageSelector = createSelector(
-  [filterSelector, imageSelector]
+  [filterSelector, imageSelector],
+  (filter, images) => {
+    if(!filter) return images;
+    return images.filter(image => image.title.includes(filter) || image.description.includes(filter));
+  }
 );
 
 export function filter(state = '', { type, payload }){

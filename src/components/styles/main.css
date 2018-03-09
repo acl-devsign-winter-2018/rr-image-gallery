@@ -1,0 +1,98 @@
+.clip {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+body{
+  background-image: url('../../background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 1.5rem;
+}
+
+#header{
+  background-color: rgba(97, 97, 104, 0.548);
+  height: auto;
+}
+
+#headerH1{
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#headerUl li{
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+
+a{
+  color: white
+}
+
+a:visited{
+  color: lightgrey
+}
+
+#albumUl{
+  margin-left: 5rem;
+  font-size: 1.5rem;
+  list-style: none;
+}
+
+#imageUl{
+  background: white;
+  min-height: 400px;
+  color: black;
+  font-size: 1.5rem;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+img{
+  height: auto;
+  width: 250px;
+}
+
+#formFilter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(97, 97, 104, 0.548);
+}
+
+#filterContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgba(97, 97, 104, 0.548);
+  font-size: 1.5rem;
+  align-items: center;
+  padding: 10px;
+}
+
+#imageForm{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#imgContainer{
+  padding: 10px;
+}
+
+#loaderIcon{
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  size: 40px;
+}

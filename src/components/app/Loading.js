@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loading } from './reducers';
-
+import { PulseLoader } from 'react-spinners';
 
 class Loading extends Component {
   
   render() {
     const { loading } = this.props;
-    if(!loading) return null;
+    if(!loading) return false;
     
     return (
-      <div className="loading">
-        <p>LOADING</p>
+      <div id='loaderIcon'>
+        <PulseLoader
+          color={'#123abc'} 
+          loading={this.props.loading} 
+        />
       </div>
     );
   }
