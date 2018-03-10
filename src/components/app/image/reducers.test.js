@@ -1,41 +1,46 @@
-import { albums, ALBUM_LOAD } from './reducers';
+import { images, filter, APPLY_FILTER, IMAGE_ADD, IMAGE_REMOVE } from './reducers';
+import { ALBUM_LOAD } from '../albums/reducers';
 
 it('Has a default of empty array', () => {
-  const state = albums(undefined, {});
+  const state = images(undefined, {});
   expect(state).toEqual([]);
 });
 
-// const albumToAdd = {
-//   id: 123,
-//   text: 'Album Title'
-// };
+const imageToAdd = {
+  id: 123,
+  title: 'Album Title',
+  url: 'image.jpg',
+  album: 123,
+  description: 'text'
+};
 
-// it('Add Album', () => {
-//   const state = albums([], { type: ALBUM_ADD, payload: albumToAdd });
-//   expect(state).toEqual([albumToAdd]);
-// });
+it('filters', () => {
+  const state = filter('', { type: APPLY_FILTER, payload: 'filter' });
+  expect(state).toEqual('filter');
+});
 
-// it('Remove a note', () => {
-//   const state = albums([albumToAdd], { type: ALBUM_REMOVE, payload: 123 });
-//   expect(state).toEqual([]);
-// });
+it('default filter', () => {
+  const state = filter(undefined, {});
+  expect(state).toEqual('');
+});
 
-// it('Updates a note', () => {
-//   const updated = {
-//     id: 123,
-//     text: 'I am an updated title'
-//   };
+it('Add Image', () => {
+  const state = images([], { type: IMAGE_ADD, payload: imageToAdd });
+  expect(state).toEqual([imageToAdd]);
+});
 
-//   const state = albums([albumToAdd], { type: ALBUM_UPDATE, payload: updated });
-//   expect(state).toEqual([{ ...albumToAdd, ...updated }]);
-// });
+it('Remove image', () => {
+  const state = images([imageToAdd], { type: IMAGE_REMOVE, payload: 123 });
+  expect(state).toEqual([]);
+});
 
-it('Loads album', () => {
-  const albumToLoad = [
-    { id: 123, text: 'Note One' }
-  ];
 
-  const state = albums([], { type: ALBUM_LOAD, payload: albumToLoad });
-  expect(state).toEqual(albumToLoad);
+it('Loads images', () => {
+  const imagesToLoad = { images: [
+    imageToAdd,
+    { id: 123, title: 'Album Title', url: 'image.jpg', album: 123, description: 'text' }
+  ] };
 
+  const state = images([], { type: ALBUM_LOAD, payload: imagesToLoad });
+  expect(state).toEqual(imagesToLoad.images);
 });
