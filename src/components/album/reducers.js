@@ -7,26 +7,30 @@ export function albums(state = [], { type, payload }) {
   switch (type) {
     case ALBUMS_LOAD:
       return payload;
-    case IMAGE_DELETE:
-      return state.filter(album => album.id !== payload);
-    case IMAGE_ADD: 
-      return [
-        ...state,
-        payload
-      ];
-    default:
+      default:
       return state;
+    }
   }
-}
-
-export function album(state = {}, { type, payload }) {
-  switch (type) {
-    case ALBUM_LOAD:
+  
+  export function album(state = {}, { type, payload }) {
+    switch (type) {
+      case ALBUM_LOAD:
       return {
         ...state,
         ...payload
       };
-    default:
+      case IMAGE_DELETE:
+        return state.filter(album => album.id !== payload);
+      case IMAGE_ADD: 
+        return {
+          ...state,
+          images: 
+            [
+              ...state.images,
+              payload
+            ]         
+        };
+      default:
       return state;
   }
 }

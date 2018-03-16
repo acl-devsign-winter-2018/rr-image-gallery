@@ -19,7 +19,7 @@ class App extends Component {
               <Albums/>
               <Switch>
                 <Route exact path="/"/>
-                <Route path="/albums/:id" component={Album}/>
+                <Route exact path="/albums/:id" component={Album}/>
               </Switch>
             </main>
           </div>

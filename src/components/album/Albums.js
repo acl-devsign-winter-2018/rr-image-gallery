@@ -10,6 +10,7 @@ export class Albums extends Component {
   componentDidMount() {
     this.props.loadAlbums();
   }
+
   
   render() {
     const { albums} = this.props;
