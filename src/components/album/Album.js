@@ -13,26 +13,20 @@ class Album extends Component {
   }
 
   render() {
-    const { addImage } = this.props;
+    const { addImage, images } = this.props;
 
     return (
-      <div>
-        <ul>
-          <Image/>
-          <Image/>
-          <Image/>
-        </ul>
+      <div> 
+        {images && <Image images={images}/>}
         <AddImage onEdit={addImage}/>
       </div>
     );
   }
 }
 
-export default connect(
-  // props => ({
-  //   id: props.match.params.id 
-  // }),
-  null,
+export default connect(state => ({ 
+    images: state.album.images
+  }),
   { addImage, loadAlbum }
 )(Album);
 
