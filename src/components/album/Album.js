@@ -2,26 +2,47 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AddImage from './AddImage';
 import Image from './Image';
-import { addImage } from './actions';
-
+import { addImage, loadAlbum } from './actions';
+import './styles/album.css';
 
 class Album extends Component {
+  
+  componentDidMount() {
+    const { id } = this.props;
+    this.load(id);
+  };
+  
+  load(id) {
+    this.props.loadAlbum(id);
+  };
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.id !== this.props.id) {
+      this.load(nextProps.id);
+    } 
+  };
+
   render() {
-    const { addImage } = this.props;
+    const { addImage, images } = this.props;
 
     return (
-      <div>
+      <div className="imageWrapper"> 
         <AddImage onEdit={addImage}/>
-        <ul>
-          <Image/>
-          <Image/>
-          <Image/>
-        </ul>
+        <div id="divider"></div>
+        <div id="imageWrap">
+          {images && <Image images={images}/>}
+        </div>
       </div>
     );
   }
 }
 
-export default connect({
-  addImage 
-})(Album);
+export default connect(
+  ({ album }, { match })  => ({ 
+    images: album.images,
+    id: match.params.id
+  }),
+
+  { addImage, loadAlbum }
+)(Album);
+

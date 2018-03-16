@@ -1,0 +1,19 @@
+.imageWrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  background: rgb(230,230,230);
+}
+
+#divider {
+  border-top: 1px solid;
+  height: 1.5rem;
+  width: 96%;
+  margin: 0 auto;
+}
+
+#imageWrap {
+  margin: 0 auto;
+  width: 96%;
+}

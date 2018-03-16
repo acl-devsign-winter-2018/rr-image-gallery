@@ -8,9 +8,11 @@ module.exports = {
   output: {
     path,
     filename: 'bundle.[hash].js',
+    publicPath: '/'
   },
   devServer: {
     contentBase: './build',
+    historyApiFallback: true
   },
   devtool: 'inline-source-map',
   plugins: [
