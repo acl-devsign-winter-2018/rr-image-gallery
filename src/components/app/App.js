@@ -7,9 +7,6 @@ import Albums from '../album/Albums';
 import Album from '../album/Album';
 
 class App extends Component {
-  
-  // createElement = (Album) => 
-  // <Album key={this.props.match.params.id}/>
 
   render() {
     const { createElement } = this.props;
@@ -23,9 +20,6 @@ class App extends Component {
               <Albums/>
               <Switch>
                 <Route exact path="/"/>
-                {/* <Route path="/albums/:id" component={({ match }) => {
-                  return <Album id={match.params.id}/>; */}
-                {/* }}/> */}
                 <Route path="/albums/:id" component={Album}/>;
                 <Redirect to="/"/>
               </Switch>

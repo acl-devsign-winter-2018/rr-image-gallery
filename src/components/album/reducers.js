@@ -20,10 +20,6 @@ export function albums(state = [], { type, payload }) {
         ...state,
         ...payload
       };
-      case ALBUM_CLEAR:
-        return {
-          state
-        };
       case IMAGE_DELETE:
         return state.filter(album => album.id !== payload);
       case IMAGE_ADD: 

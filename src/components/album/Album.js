@@ -9,8 +9,18 @@ class Album extends Component {
   
   componentDidMount() {
     const { id } = this.props;
+    this.load(id);
+  };
+  
+  load(id) {
     this.props.loadAlbum(id);
-  }
+  };
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.id !== this.props.id) {
+      this.load(nextProps.id);
+    } 
+  };
 
   render() {
     const { addImage, images } = this.props;

@@ -11,7 +11,6 @@ export class Albums extends Component {
     this.props.loadAlbums();
   }
 
-  
   render() {
     const { albums} = this.props;
     return (

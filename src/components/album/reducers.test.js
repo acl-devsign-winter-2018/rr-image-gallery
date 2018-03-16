@@ -33,13 +33,4 @@ describe('reducer tests', () => {
     });
     expect(state).toEqual(albumToLoad);
   });
-
-  // it('clears album from store', () => {
-  //   const state = album({}, {
-  //     type: ALBUM_CLEAR,
-  //     payload: {} 
-  //   });
-  //   expect(state).toEqual({}); 
-  // });
-
 });
