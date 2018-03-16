@@ -9,10 +9,10 @@ export function loadAlbums() {
   };
 }
 
-export function loadAlbum() {
+export function loadAlbum(id) {
   return {
     type: ALBUM_LOAD,
-    payload: galleryApi.loadAlbum()
+    payload: galleryApi.loadAlbum(id)
   };
 }
 

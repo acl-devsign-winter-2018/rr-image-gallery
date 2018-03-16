@@ -9,7 +9,12 @@
     background: black;
     margin: 4px;
     padding: .5rem;
-    &:hover { background: orangered; color: black; }
+    &:hover { 
+      background: orangered; 
+      color: black; 
+      transform: scale(1.2);
+    }
+
     a {
       color: white;
       text-decoration: none;

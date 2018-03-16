@@ -16,9 +16,9 @@ class App extends Component {
           <div>
             <Header/>
             <main>
-              {/* <Albums/> */}
+              <Albums/>
               <Switch>
-                <Route path="/" component={Albums}/>
+                <Route exact path="/"/>
                 <Route path="/albums/:id" component={Album}/>
               </Switch>
             </main>

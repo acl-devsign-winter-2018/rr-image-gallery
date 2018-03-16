@@ -34,7 +34,9 @@
     border: none;
     background: black;
     color: white;
-    &:hover { background: orangered; color: black; }
-
+    &:hover { 
+      background: orangered; 
+      color: black;
+    }
   }
 }
