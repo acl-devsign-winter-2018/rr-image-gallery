@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-
+import './styles/image.css';
 export default class Image extends Component {
 
   render() {

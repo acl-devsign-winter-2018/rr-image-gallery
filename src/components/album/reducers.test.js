@@ -1,4 +1,4 @@
-import { albums, album, ALBUMS_LOAD, ALBUM_LOAD } from './reducers';
+import { albums, album, ALBUMS_LOAD, ALBUM_LOAD, ALBUM_CLEAR } from './reducers';
 
 describe('reducer tests', () => {
 
@@ -27,8 +27,19 @@ describe('reducer tests', () => {
   };
 
   it('Loads all albums from API', () => {
-    const state = albums([], { type: ALBUMS_LOAD,       payload: albumToLoad });
+    const state = albums([], { 
+      type: ALBUMS_LOAD,       
+      payload: albumToLoad 
+    });
     expect(state).toEqual(albumToLoad);
   });
+
+  // it('clears album from store', () => {
+  //   const state = album({}, {
+  //     type: ALBUM_CLEAR,
+  //     payload: {} 
+  //   });
+  //   expect(state).toEqual({}); 
+  // });
 
 });

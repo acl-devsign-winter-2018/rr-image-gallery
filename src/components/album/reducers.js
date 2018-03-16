@@ -2,6 +2,7 @@ export const ALBUMS_LOAD = 'ALBUMS_LOAD';
 export const ALBUM_LOAD = 'ALBUM_LOAD';
 export const IMAGE_ADD = 'IMAGE_ADD';
 export const IMAGE_DELETE = 'IMAGE_LOAD';
+export const ALBUM_CLEAR = 'ALBUM_CLEAR';
 
 export function albums(state = [], { type, payload }) {
   switch (type) {
@@ -19,6 +20,10 @@ export function albums(state = [], { type, payload }) {
         ...state,
         ...payload
       };
+      case ALBUM_CLEAR:
+        return {
+          state
+        };
       case IMAGE_DELETE:
         return state.filter(album => album.id !== payload);
       case IMAGE_ADD: 

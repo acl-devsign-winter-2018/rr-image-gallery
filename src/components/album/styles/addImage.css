@@ -20,12 +20,12 @@
 }
 
 .addImage {
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   padding: 1rem 2rem 1.5rem;
   width: 80%;
   flex-direction: row;
   align-items: center;
-  background: rgb(230,230,230); 
+  background: rgb(180,180,180); 
 
   button {
     width: 5rem;
