@@ -1,5 +1,5 @@
 {
-  "name": "budget-tracker",
+  "name": "rr-image-gallery",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/heicj/budget-tracker.git"
   },
-  "author": "Charlie & Jenny",
+  "author": "Jennifer Elton",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/heicj/budget-tracker/issues"
@@ -29,6 +29,8 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1",
+    "styled-components": "^3.2.1",
     "thunk": "0.0.1"
   },
   "devDependencies": {
